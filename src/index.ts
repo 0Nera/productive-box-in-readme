@@ -87,7 +87,7 @@ interface IRepo {
     const percent = cur.commits / sum * 100;
     const line = [
       `${cur.label}`.padEnd(10),
-      `${cur.commits.toString().padStart(5)} commits`.padEnd(14),
+      `${cur.commits.toString().padStart(5)} изменений`.padEnd(14),
       generateBarChart(percent, 21),
       String(percent.toFixed(1)).padStart(5) + '%',
     ];
@@ -110,7 +110,7 @@ interface IRepo {
   const startComment = '<!--START_SECTION:productive-box-in-readme-->';
   const endComment = '<!--END_SECTION:productive-box-in-readme-->';
 
-  const title = (morning + daytime) > (evening + night) ? 'I\'m an early 🐤' : 'I\'m a night 🦉';
+  const title = (morning + daytime) > (evening + night) ? 'Я активнее днём' : 'Я активнее ночью';
   const productiveBoxContent = '```text\n' + title + '\n\n' + lines.join('\n') + '\n```';
   const sectionContent = `${startComment}\n${productiveBoxContent}\n${endComment}`;
 
